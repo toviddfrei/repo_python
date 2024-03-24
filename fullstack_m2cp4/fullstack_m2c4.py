@@ -133,11 +133,11 @@ elemento utilizando el indice, teniendo en cuenta que el indice siempre comienza
 print('Exercise 5 \n')
 # Utilizo el desempaquetado de la tupla
 first_element, second_element, third_element, fourth_element = new_tuple
-new_tuple_second_element = first_element
+new_tuple_second_element = second_element
 # El segundo elemento de la tupla desempaquetado:
 print('The second element of the tuple unpacked: {}'.format(new_tuple_second_element))
 # Utilizo el indice de la tupla
-new_tuple_second_element_index = new_tuple[0]
+new_tuple_second_element_index = new_tuple[1]
 # El segundo elemento de la tupla indice:
 print('The second element of the tuple indexes: {}'.format(new_tuple_second_element_index))
 print('\n')
