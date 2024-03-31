@@ -463,4 +463,129 @@ loop_and_break()
 """
 Bucle while, la opción a for-in, pero de uso mucho menor.
 
+La diferencia principal entre un bucle for-in y un bucle while, es que como sabemos el
+for-in, tiene un inicio y un final predeterminado, la cantidad de elementos por los que
+tiene que iterar comienza en el primero y se detiene en el ultimo. Sin embargo un bucle
+while no tiene un final definido, si no le predeterminamos ese final, podemos crear
+un bucle infinito, con las consecuencias que eso puede acarrear, bloqueo de computador.
+
+Para definir cuando debe terminar un bucle while, debemos crear un valor centinela, para
+decirle cuando alcance ese valor parate.
+Vamos a crear un valor centinela contando todos los elementos de la lista con la función
+len(), cuando len() nos devuelva el valor total de los elementos añadimos la condicion de
+mayor que 0 ese sera el valor centinela cuando la condicion sea menor a 0 y el condicional
+no se cumpla, el bucle se detendra.
+
+Ejemplo:
+
+Vamos a iterar un rango de 1 a 100, pero iremos eliminando elementos segun iteremos el
+rango, cuando la condicion que estipulemos no se cumpla el bule while se detendra.
+
+iteramos el rango con while, le pasamos la cantidad de elementos con len función, y
+mostramos y eliminamos el ultimo elemento con pop()
+
+nums = list(range(1,100))
+
+while len(nums) > 0:
+    print(nums.pop())
+
+
+Ejemplo 1:
+
+Creamos un juego de adivinanza, el usuario debe averiguar un valor, una vez lo acierte el 
+bucle while se detendra y saldra este valor que se tiene que averiguar es el valor centinela
+el que hace que while se detenga.
+
+Utilizamos el bucle while, y el condicional if, si el retorno es True, seguimos iterando, si 
+el retorno el False, terminamos el bucle y nos salimos.
+Retornaremos False cuando el usuario acierte, True es devuelto mientras el usuario no acierte.
+
+def guessing_game():
+  while True:
+    print('What is your guess?')
+    guess = input()
+
+    if guess == '42':
+      print('You correctly guessed it!')
+      return False
+    else:
+      print(f"No, {guess} isn't the answer, please try again\n")
+
+guessing_game()
 """
+# Bucle while, cuenta atras con funcion len() y pop() 
+nums = list(range(1,100))
+
+while len(nums) > 0:
+    print(nums.pop())
+
+# Juego adivinar el valor
+# Si adivinas el valor, bucle while se detiene
+def guessing_game():
+  # mientras return sea True, seguira iterando
+  while True:
+    print('What is your guess?')
+    # le preguntamos al usuario un valor
+    guess = input()
+
+    # Aplicamos la condicion del valor centinela
+    if guess == '42':
+      print('You correctly guessed it!')
+      # Si el usuario acierta retornamos False y se
+      # detiene el bucle
+      return False
+    # Si no continua el blucle hasta que acertemos
+    else:
+      print(f"No, {guess} isn't the answer, please try again\n")
+
+guessing_game()
+
+# Coding Exercise
+# In the below starter code, place 4 dog names (elements) of your
+# choice in the dog_house list. Then write a while loop that iterates
+# through the dog_house list and prints each dogs name. An iterator
+# variable named "counter" must be set, and must have an initial value of 0.
+
+# Hint: An iterator value (also sometimes called a sentinel value) is a
+# value that exists outside of your loop, and that you update or otherwise
+# keep track of each time you loop, so that your while loop knows when to end.
+
+"""
+Example:
+iterator_value = 0
+while iterator_value < 10:
+    print("Keep looping...")
+    iterator_value += 1
+"""
+
+# Ejercicio de codificación
+# En el siguiente código de inicio, coloque 4 nombres de perros (elementos)
+# de su elección en la lista dog_house. Luego, escriba un bucle while que 
+# recorra la lista dog_house e imprima el nombre de cada perro. 
+# Se debe establecer una variable iteradora denominada "contador" 
+# y debe tener un valor inicial de 0.
+
+# Sugerencia: un valor de iterador (también llamado a veces valor centinela)
+# es un valor que existe fuera de su ciclo y que usted actualiza o realiza
+# un seguimiento cada vez que realiza un ciclo, para que su ciclo while sepa
+# cuándo finalizar.
+
+"""
+Ejemplo:
+valor_iterador = 0
+mientras valor_iterador < 10:
+    print("Seguir bucle...")
+    valor_iterador += 1
+"""
+
+def loop_using_while():
+    dog_house = ['luna','sol','plata', 'oro'] # Put dog names here
+    # Write your code here
+    counter = 0
+    
+    while len(dog_house) > counter:
+        print(f"{dog_house[counter]}")
+        counter += 1 
+    return [dog_house, counter]
+
+loop_using_while()
