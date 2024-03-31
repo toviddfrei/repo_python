@@ -589,3 +589,198 @@ def loop_using_while():
     return [dog_house, counter]
 
 loop_using_while()
+
+"""
+Combinar y aplanar listas con el bucle for-in.
+
+Vamos a utilizar la función append() para agregar elementos nuevos a la lista
+
+Ejemplo:
+
+Tenemos dos listas de elementos, state antiguos, nuevos state, queremos 
+tener una sola lista con los estados nuevos actualizados, la forma de hacerlo,
+no es sumar una lista a la otra, esto agregara una lista completa a la otra lista
+queremos tener una sola lista con todos los elementos.
+
+state_old = ['On', 'Off', 'Pause']
+state_new = ['Stop', 'Cancel', 'Slow']
+
+# No es lo que buscamos
+state_new += state_old
+"""
+# Combinar listas con for-in
+state_old = ['On', 'Off', 'Pause']
+state_new = ['Stop', 'Cancel', 'Slow']
+
+# Averiguar si es util esta forma
+
+## state_new += state_old
+
+# No es lo que buscamos
+state_db = [state_old, state_new]
+print(state_db)
+
+# Utilizamos bucle for-in
+for state in state_old:
+    state_new.append(state)
+    print(state)
+
+print(state_new)
+
+# Coding Exercise
+# Write a for loop that takes each number from the numbers list,
+# increments it by 1, and adds it to the result list.
+# Ejercicio de codificación
+# Escribe un bucle for que tome cada número de la lista de números,
+# lo incrementa en 1 y lo agrega a la lista de resultados.
+
+def loop_over_list():
+    numbers = [1,2,3,4,5,6]
+    result = []
+    
+    # Write your code here
+    for num in numbers:
+        result.append(num + 1)
+    
+    return result
+
+print(loop_over_list())
+
+
+"""
+Compresión de listas.
+
+El tema que vamos a discutir es una lista de comprensión. 
+Y lo que eso significa esencialmente es que podemos configurar varios bucles
+for-in para que funcionen en una sola línea y, de hecho, podemos generar 
+listas a partir de esas líneas de código.
+
+Voy a desmenuzar este codigo, mostrando la compresión de listas.
+
+# De forma tradicional
+
+# Creamos una lista num_list, con rango de valores de 1 a 11, imprimira de 1 a 10
+num_list = range(1, 11)
+# Creamos una segunda lista vacia cubed_nums
+cubed_nums = []
+# Creamos un bucle for-in que itera sobre la num_list
+for num in num_list:
+  # Añadimos en la lista vacia, cubed_nums el resultado de num elevado al cubo
+  cubed_nums.append(num ** 3)
+
+print(f"{cubed_nums}, tradicional")
+
+# Por compresión de listas
+
+# Creamos una lista cubed_nums, donde guardaremos los resultados
+# Abrimos corchetes como en una lista
+# la primera expresión antes del bucle, debe ser la operacion o el valor que queremos
+# Justo despues expresamos el bucle for, tal como antes for num in num_list
+# El resto la hace python, itera sobre num_list, extrae un num lo eleva al cubo y lo
+# guarda en la lista cubed_nums
+cubed_nums = [num ** 3 for num in num_list]
+
+print(f"{cubed_nums}, compresion")
+
+Podemos crear otro ejemplo, de compresion de listas incluyendo un condicional al bucle
+for-in con el condicional if, buscando solo lo valores pares en la salida de la
+compresión
+
+# De forma tradicional
+
+# Creamos una lista vacia even_numbers
+even_numbers = []
+# Creamos el bucle for-in para iterar sobre nuestra lista base de 1 a 11
+for num in num_list:
+  # Creamos el condicional para obtener los pares con el operador de modulo, el cual
+  # retorna 0 cuando no tiene resto, por lo tanto son pares.
+  if num % 2 == 0:
+    # Añadimos el num a la lista vacia
+    even_numbers.append(num)
+
+print(even_numbers)
+
+# Utilizando compresion de lista
+
+# Creamos la lista even_numbers
+# Aperturamos la lista con los corchetes
+# Dato que guardara, antes del inicio del bucle for
+# Creamos el bucle for, iterando el data num con nuestra lista base
+# Justo despues expresamos el condicional if buscando los valores deteminados
+# La operativa es la misma cada iteracion de bucle for por num_list
+# Es pasada al condicional para obtener el valor y si cumple la condicion
+# Es guardado en num detro de la lista even_numbers
+even_numbers = [num for num in num_list if num % 2 == 0]
+
+print(even_numbers)
+"""
+
+# De forma tradicional
+
+# Creamos una lista num_list, con rango de valores de 1 a 11, imprimira de 1 a 10
+num_list = range(1, 11)
+# Creamos una segunda lista vacia cubed_nums
+cubed_nums = []
+# Creamos un bucle for-in que itera sobre la num_list
+for num in num_list:
+  # Añadimos en la lista vacia, cubed_nums el resultado de num elevado al cubo
+  cubed_nums.append(num ** 3)
+
+print(f"{cubed_nums}, tradicional")
+
+# Por compresión de listas
+
+# Creamos una lista cubed_nums, donde guardaremos los resultados
+# Abrimos corchetes como en una lista
+# la primera expresión antes del bucle, debe ser la operacion o el valor que queremos
+# Justo despues expresamos el bucle for, tal como antes for num in num_list
+# El resto la hace python, itera sobre num_list, extrae un num lo eleva al cubo y lo
+# guarda en la lista cubed_nums
+cubed_nums = [num ** 3 for num in num_list]
+
+print(f"{cubed_nums}, compresion")
+
+# De forma tradicional
+
+# Creamos una lista vacia even_numbers
+even_numbers = []
+# Creamos el bucle for-in para iterar sobre nuestra lista base de 1 a 11
+for num in num_list:
+  # Creamos el condicional para obtener los pares con el operador de modulo, el cual
+  # retorna 0 cuando no tiene resto, por lo tanto son pares.
+  if num % 2 == 0:
+    # Añadimos el num a la lista vacia
+    even_numbers.append(num)
+
+print(f"{even_numbers}, tradicional")
+
+# Utilizando compresion de lista
+
+# Creamos la lista even_numbers
+# Aperturamos la lista con los corchetes
+# Dato que guardara, antes del inicio del bucle for
+# Creamos el bucle for, iterando el data num con nuestra lista base
+# Justo despues expresamos el condicional if buscando los valores deteminados
+# La operativa es la misma cada iteracion de bucle for por num_list
+# Es pasada al condicional para obtener el valor y si cumple la condicion
+# Es guardado en num detro de la lista even_numbers
+even_numbers = [num for num in num_list if num % 2 == 0]
+
+print(f"{even_numbers}, compresion")
+
+
+# Coding Exercise
+# Create a variable called result and use list comprehension 
+# to increment each number from the numbers list by 1
+# Ejercicio de codificación
+# Crea una variable llamada resultado y usa lista de comprensión
+# para incrementar cada número de la lista de números en 1.
+
+def list_comprehension():
+    numbers = [1,2,3,4,5,6]
+    # Write your code here
+    result = [num + 1 for num in numbers]
+    
+    return result
+
+print(list_comprehension())
