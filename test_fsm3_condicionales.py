@@ -62,3 +62,58 @@ if answer == False: #WriteYourConditionsHere:
   print(answer)
 
 print(answer)
+
+"""
+Uso del operador ternario con condicionales:
+
+el operador ternario nos permite otorgar una condicion preferente, la 
+sintaxis es:
+Hay que tener cuidado, ya que añade complejidad al codigo y una de las 
+bases de python, es que lo sencillo a lo complejo pep-20. Por lo tanto
+si la expresion del operador ternario se extiende mejor utilizar el 
+codigo tradicional de las condicionales.
+
+role = 'guest'
+
+auth = 'can access' if role == 'admin' else 'cannot access'
+
+if role == 'admin':
+  auth = 'can access'
+else:
+  auth = 'cannot access'
+
+print(auth)
+"""
+
+# Coding Exercise
+# Write a ternary operator that sets "language_check" to True 
+# if "language" is set as "python", and sets it to False if it's not.
+# Ejercicio de codificación
+# Escribe un operador ternario que establezca "language_check" en Verdadero
+# si "idioma" está configurado como "python", y lo establece en Falso si no lo es.
+
+language = "python"
+
+language_check = True if language == 'python' else False # Write your code here
+
+#Ejemplo personal, traslado este operador ternario a codigo tradicional
+
+if language == 'python':
+  language_check = True
+else:
+  language_check = False
+
+
+"""
+Lista completa de operadores condicionales:
+
+List of comparison operators
+
+# == Equality
+# != Inequality
+# <> Inequality (deprecated)
+# >  Greater than
+# >= Greater than or equal to
+# < Less than
+# <= Less than or equal to
+"""
