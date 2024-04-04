@@ -117,3 +117,119 @@ List of comparison operators
 # < Less than
 # <= Less than or equal to
 """
+
+
+"""
+Trabajar cadenas y colecciones con condicionales, usar lo que se llama in operator,
+o operador de menbresia in.
+
+Vamos a realizar la busqueda de un valor estipulado, tanto en una cadena como en una
+coleccion de elementos con el operador in.
+
+Ejemplo:
+
+Buscamos una palabra dentro de una oración.
+
+word = 'plaza'
+oration = 'El coche rodo por la plaza, y luego se fue'
+
+if word in ortation:
+  print('{word}, encontrada')
+else:
+  print('{word}, no encontrada'}
+"""
+# Busqueda de una palabra en una oración
+word = 'plaza'
+oration = 'El coche rodo por la plaza, y luego se fue'
+
+if word in oration:
+  print(f'{word}, encontrada')
+else:
+  print(f'{word}, no encontrada')
+
+# Cambiamos la palabra plaza por Plaza
+# Esta busqueda no distingue entre mayusculas o minusculas
+# Deberiamos pasar todo a minusculas o todo a mayusculas
+# para asegurar la busqueda correcta.
+
+word = 'Plaza'
+word_lower = word.lower()
+oration = 'El coche rodo por la plaza, y luego se fue'
+oration_lower = oration.lower()
+
+if word_lower in oration_lower:
+  print(f'{word_lower}, encontrada')
+else:
+  print(f'{word_lower}, no encontrada')
+
+# Busqueda de un elemento en una coleccion
+
+nums = [1, 2, 3, 4]
+
+if 2 in nums:
+  print(f'2, encontrado')
+else:
+  print(f'{2}, no encontrado')
+
+# Coding Exercise
+# In the below code, fix the condition so that the program prints out
+# "The word is in the sentence".
+# Ejercicio de codificación
+# En el siguiente código, corrija la condición para que el programa imprima
+# "La palabra está en la oración".
+
+"""
+Condicionales compuestos:
+
+Los operadores and y or, el operador and es mucho mas restictivo en sus
+condicionales, el operador or, es mas flexible.
+
+El operador and, exige que ambas expresiones sean verdaderas, mientras que el 
+operador or permite que una de las dos sea falsa 
+
+Ejemplo
+
+username = 'jonsnow'
+email = 'jon@snow.com'
+password = 'thenorth'
+
+if username == 'jonsnow' and password == 'thenorth':
+  print('Access permitted')
+else:
+  print('Not allowed')
+
+
+if (username == 'jonsnow' or email == 'jon@snow.com') and password == 'thenorth':
+  print('Access permitted')
+else:
+  print('Not allowed')
+
+
+if username == 'jonsnow' or password == 'thenorth':
+  print('Access permitted')
+else:
+  print('Not allowed')
+
+
+logged_in = True
+standard_user = False
+
+if logged_in and not standard_user:
+  print('You can access the admin dashboard')
+else:
+  print('You can only access the standard dashboard')
+"""
+
+# Coding Exercise
+# Fill in the below conditional with a compound condition that will 
+# print "Success!" if "number" is anything between 1 and 100 (inclusive).
+# Ejercicio de codificación
+# Complete el siguiente condicional con una condición compuesta que
+# imprimir "¡Éxito!" si "número" está entre 1 y 100 (inclusive).
+
+
+def compound_conditional(number):
+    if number >= 1 and number <= 100:#YourCompoundConditionalHere:
+        print("Success!")
+    else:
+        print("Failure...")
