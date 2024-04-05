@@ -32,3 +32,66 @@ def greeting(text_greeting):
 
 # Llamaos a la funcion por su nombre, y le pasamos parametros si los necesita
 greeting('Hola compañero,')
+
+"""
+Sintaxis básica de funciones:
+
+La sintaxis báscisa empieza por la palabra def,
+luego nombras la funcion como en la variables de forma caja de serpiente entre guiones bajos
+y minusculas. Luego parentesis y terminas la linea con dos puntos.
+
+Despues de la declaración de la funcion la siguiente linea debe ser sangrada con dos o cuatro 
+espacios, segun queramos.
+
+Entre la definición de la funcion y la siguiente linea que vas ha utilizar crear dos lineas de
+espacio.
+
+Podemos pasarle argumentos a la función, los argumentos pueden ser cualquier tipo de valor o elementos
+cadenas, numeros, listas, diccionarios, estos argumentos se escriben entre los parentesis en la 
+declaracion de la funcion, entonces la funcion espera recibir los valores detallados en sus argumentos
+para poder continuar, si no recibe lo que necesita suelta un TypeError.
+
+Ejemplos:
+
+def full_name(first, last):
+  print(f'{first} {last}')
+
+
+full_name('Kristine', 'Hudgens')
+
+def auth(email, password):
+  if email == 'kristine@hudgens.com' and password == 'secret':
+    print('You are authorized')
+  else:
+    print('You are not authorized')
+
+
+auth('kristine@hudgens.com', 'asdf')
+
+def hundred():
+  for num in range(1, 101):
+    print(num)
+
+
+hundred()
+
+def counter(max_value):
+  for num in range(1, max_value):
+    print(num)
+
+
+counter(501)
+"""
+
+# Coding Exercise
+# Create a function called greeting that prints
+# "hello" when the function is called.
+# Ejercicio de codificación
+# Crea una función llamada saludo que imprime
+# "hola" cuando se llama a la función.
+
+def greeting():
+    print("hello")
+
+
+greeting()
