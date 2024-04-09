@@ -411,3 +411,121 @@ def greeting(time_of_day, *args):
 
 greeting('Afternoon', 'Kristine', 'M', 'Hudgens')
 greeting('Morning', 'Tiffany', 'Hudgens')
+
+
+"""
+Descripcion general de los argumentos de palabras clave en funciones:
+
+Podemos tener una una listas de argumento de palabras clave, en este caso se trabaja
+como si fueran diccionarios, pares de clave=valor, lo cual tiene sentido, si consideramos
+que un argumento de palabra clave, es un par de clave, la palabra y valor, el valor
+sustituto que entraria si no hay un argumento definido.
+
+La sintaxis es con dos asteriscos delante de la palabra **kwargs como norma comun se utiliza
+esta palabra para referirnos a la lista de argumentos de palabras clave, que sera tratado
+como un diccionario en la funcion.
+
+Ejemplo:
+
+def greeting(**kwargs):
+  print(kwargs)
+
+
+greeting()
+greeting(first = 'Kristine', last = 'Hudgens')
+
+def greeting(**kwargs):
+  if kwargs:
+    print(f"Hi {kwargs['first']} {kwargs['last']}, have a great day!")
+  else:
+    print('Hi Guest!')
+
+
+greeting()
+greeting(first = 'Kristine', last = 'Hudgens')
+"""
+
+# Ejercicio personal:
+
+# Pasar una lista de argumentos por nombre a una función
+# Nos devolvería un diccionario vacio
+def selector_word(**kwargs):
+   print(kwargs)
+
+
+selector_word()
+# Code output
+# {}
+
+# Paso un selector de word con argumentos por nombre
+def selector_word(**kwargs):
+   print(kwargs)
+
+
+selector_word()
+selector_word(marca = 'Ford', model = 'Fiesta')
+# Code output
+# {'marca': 'Ford', 'model': 'Fiesta'}
+
+# Podemos utilizar condicionales y trabajar como un diccionario
+# Comprobar siempre el flujo de la canalización para cada llamada
+def selector_word(**kwargs):
+   if kwargs:
+      print(f"Me gusta tu coche es módelo, {kwargs['model']} de la marca, {kwargs['marca']}.")
+   else:
+      print(f"Thanks guest")
+
+
+selector_word()
+selector_word(marca = 'Ford', model = 'Fiesta')
+# Code output
+# Thanks guest
+# Me gusta tu coche es módelo, Fiesta de la marca, Ford
+
+
+"""
+Como combinar todos los tipos de argumentos en una funcion
+argumentos puros o posicionales, descomprimido  de una lista de argumentos por nombres,
+lista de argumentos de palabras clave.
+
+Utilizamos argumento posicional para el tiempo
+Utilizamos lista de argumentos para nombre y apellido
+- Utilizamos la funcion .join para mostrar el nombre y apellido, 
+extraido de la tupla.
+Utilizamos lista de argumentos de palabras clave para las tareas
+- Realizamos un bucle for extrayendo del diccionario su clave, valor
+
+Ejemplo:
+
+def greeting(time_of_day, *args, **kwargs):
+  print(f"Hi {' '.join(args)}, I hope that you're having a good {time_of_day}.")
+
+  if kwargs:
+    print('Your tasks for the day are:')
+    for key, val in kwargs.items():
+      print(f'{key} -> {val}')
+
+
+greeting('Morning',
+         'Kristine', 'Hudgens',
+         first = 'Empty dishwasher',
+         second = 'Take pupper out',
+         third = 'math homework')
+"""
+
+# Ejercicio personal
+# Declaro funcion great con los tres tipos de parametros
+def great(day, *arg, **kwargs):
+   # Imprimo utilizando parametro posicional y parametro de lista
+   print(f"Hola es {day}, que estas haciendo {' '.join(arg)}")
+   
+  # Creo condicional para los parametros de lista de claves
+   if kwargs:
+      for key, val in kwargs.items():
+        print(f"{key} {val}")
+
+great('Tarde')
+great('Mañana',
+      'Pintar', 'Mesa',
+      entrar = 'si',
+      salir = 'no')
