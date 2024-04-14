@@ -1,4 +1,4 @@
 library_module2
 library_module3
 test_numpy
-test_request
+test_requests
