@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""
+Cree bucle for python
+"""
+
 # Creamos un interrogador al sensor
 status_list = [0,1,0,1,0,0,0,0,0,1,0,1,0,1,1,1,0,0,0,1]
 count_sensor = len(status_list)
@@ -48,3 +52,49 @@ if count_temp == count_sensor:
             print(f" Error toma muestra : {t}")
 else:
     print("error system")
+
+
+"""
+Cree una función de Python llamada suma que tome 3 argumentos y devuelva la suma de los 3.
+"""
+def sum_function(a, b, c):
+    return a + b + c
+
+sum_function(1, 2, 3)
+
+
+"""
+Cree una función lambda con la misma funcionalidad que la función de suma que acaba de crear.
+"""
+x = lambda a, b, c: a + b + c
+print(x(1, 2, 3))
+
+
+"""
+Utilizando la siguiente lista y variable, determine si el valor
+de la variable coincide o no con un valor de la lista. 
+*Sugerencia, si es necesario, utilice un bucle for in y el 
+operador in.
+"""
+
+nombre = 'Enrique'
+lista_nombre = ['Jessica', 'Paul', 'George', 'Henry', 'Adán']
+
+# Tenemos que recorrer toda la lista y una vez terminada, devolver
+# el resultado, esta en la lista o no esta.
+# Necesito un contador que acumule las veces que hay coincidencia
+# Lo mejor sería crear una función y pasarle los valores, para que
+# solo devuelva un resultado y sea mas legible lo que estamos haciendo
+
+def search_element(name, list):
+    count = 0
+    for n in lista_nombre:
+        if n == nombre:
+            count += 1
+    
+    if count > 0:
+        print("Si está en la lista")
+    else:
+        print("No está en la lista")
+
+search_element(nombre,lista_nombre)
