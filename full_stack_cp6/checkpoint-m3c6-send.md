@@ -13,36 +13,6 @@
 
 ___
 
-Buenos días Daniel, felicidades por haber llegado al CheckPoint 6, te comento lo que vas a realizar...
-
-Este checkpoint vamos a seguir con la dinámica del checkpoint anterior, necesito que realices una documentación sobre lo conceptos que te proporcionare, recuerda debes ser lo más claro y comprensible posible, estas creando un material que lo visualizarán personas que recién inician en el mundo del desarrollo por lo tanto debes también sustentarlo con ejemplos, porque se utiliza, para que se utiliza, sintaxis, etc…
-
-Los conceptos son los siguientes:
-
-**- ¿PARA QUÉ USAMOS CLASES EN PYTHON?**
-
-**- ¿QUÉ MÉTODO SE EJECUTA AUTOMÁTICAMENTE CUANDO SE CREA UNA INSTANCIA DE UNA CLASE?**
-
-**- ¿CUÁLES SON LOS TRES VERBOS DE API?**
-
-**- ¿ES MONGODB UNA BASE DE DATOS SQL O NOSQL?**
-
-**- ¿QUÉ ES UNA API?**
-
-**- ¿QUÉ ES POSTMAN?**
-
-**- ¿QUÉ ES EL POLIMORFISMO?**
-
-**- ¿QUÉ ES UN MÉTODO DUNDER?**
-
-**- ¿QUÉ ES UN DECORADOR DE PYTHON?**
-
-Y POR ULTIMO NECESITO QUE ME HAGAS ESTE EJERCICIO PRÁCTICO DE PYTHON, Y LO SUBAS A GIT-HUB O REPLIT PARA REVISARLO
-
-**-CREE UNA CLASE DE PYTHON LLAMADA USUARIO QUE USE EL MÉTODO INIT Y CREE UN NOMBRE DE USUARIO Y UNA CONTRASEÑA. CREA UN OBJETO USANDO LA CLASE.**
-
-Esta es toda la asignación, ¡mucha suerte!
-
 # <a id="paraque"> ¿Para qué usamos Clases en Python?</a>
 [up](#menu)
 
